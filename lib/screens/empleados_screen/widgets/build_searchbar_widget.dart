@@ -13,7 +13,7 @@ class BuildSearchbarWidget extends StatelessWidget {
       autoFocus: false,
       backgroundColor: WidgetStatePropertyAll(Colors.transparent),
       shape: WidgetStatePropertyAll(
-        RoundedRectangleBorder(borderRadius: MinRadius.radiusMin3),
+        RoundedRectangleBorder(borderRadius: MinRadius.radiusMin1),
       ),
       leading: Icon(Icons.search_rounded, color: GreyColors.greyColorShade2),
       hintText: 'Buscar',
