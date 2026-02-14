@@ -62,6 +62,7 @@ class BuildEmployesWidget extends StatelessWidget {
         trailing: Icon(
           Icons.arrow_forward_ios_rounded,
           color: GreyColors.greyColorShade2,
+          size: 15,
         ),
       ),
     );
