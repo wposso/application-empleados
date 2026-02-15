@@ -13,10 +13,10 @@ class BuildSearchbarWidget extends StatelessWidget {
       autoFocus: false,
       backgroundColor: WidgetStatePropertyAll(Colors.transparent),
       shape: WidgetStatePropertyAll(
-        RoundedRectangleBorder(borderRadius: MinRadius.radiusMin1),
+        RoundedRectangleBorder(borderRadius: MaxRadius.radiusMax3),
       ),
       leading: Icon(Icons.search_rounded, color: GreyColors.greyColorShade2),
-      hintText: 'Buscar',
+      hintText: 'Buscar empleado',
       hintStyle: WidgetStatePropertyAll(
         TextStyle(color: GreyColors.greyColorShade2),
       ),

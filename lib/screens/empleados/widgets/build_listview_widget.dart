@@ -3,6 +3,7 @@ import 'package:application/screens/empleados/widgets/build_employes_widget.dart
 import 'package:application/theme/colors/global_colors.dart';
 import 'package:application/theme/helpers/borderadius_global.dart';
 import 'package:application/theme/helpers/spacer_box.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BuildListviewWidget extends StatelessWidget {
@@ -18,12 +19,15 @@ class BuildListviewWidget extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: BuildEmployesWidget(
-              nombre: i.nombre,
-              documento: i.documento,
+              nombre: i.nombres,
+              documento: i.correo,
+              tag: i.estado.name,
+              estado: i.estado,
             ),
           );
         },
-        separatorBuilder: (context, i) => SpacerVerticalBox.verticalMinBox,
+        separatorBuilder: (context, i) =>
+            Divider(color: GreyColors.greyColorShade1),
         itemCount: empleados.length,
       ),
     );
