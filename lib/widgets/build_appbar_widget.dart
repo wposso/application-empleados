@@ -59,7 +59,6 @@ class BuildAppbarWidget extends StatelessWidget {
       borderRadius: MinRadius.radiusMin3,
       menuPadding: EdgeInsets.only(top: 6, bottom: 6, left: 12, right: 12),
       position: PopupMenuPosition.under,
-
       icon: const Icon(
         Icons.keyboard_arrow_down_rounded,
         color: Colors.white,
@@ -71,7 +70,7 @@ class BuildAppbarWidget extends StatelessWidget {
       itemBuilder: (context) => EstadoEmpleado.values.map((estado) {
         return PopupMenuItem(
           value: estado,
-          child: Text('Estado: ${estado.name}'),
+          child: Text('Estados: ${estado.name}'),
         );
       }).toList(),
     );
