@@ -15,62 +15,77 @@ class EmpleadosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: BlueColors.blueColorShade2,
-        appBar: PreferredSize(
-          preferredSize: Size(double.infinity, 90),
-          child: BuildAppbarWidget(buildWidget: _buildAddButton(context)),
-        ),
-        body: Container(
-          decoration: BoxDecoration(
-            color: WhiteColors.whiteColor,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 12,
-                ),
-                child: Container(
-                  height: 45,
-                  decoration: BoxDecoration(
-                    borderRadius: MaxRadius.radiusMax3,
-                    color: GreyColors.greyColorShade1,
-                  ),
-                  child: BuildSearchbarWidget(),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 15,
-                ),
-                child: SizedBox(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Empleados',
-                        style: TextStyle(
-                          fontSize: MaxSizeFont.maxSizeFont1,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.9,
-                        ),
-                      ),
-                      SpacerVerticalBox.verticalMinBox,
-                      Text('Activos'),
-                    ],
-                  ),
-                ),
-              ),
-              BuildListviewWidget(),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.topRight,
+            stops: const [0.1, 0.4, 0.6, 0.9],
+            colors: [
+              BlueColors.blueColorShade2,
+              BlueColors.blueColorShade1,
+              BlueColors.blueColorShade3,
+              BlueColors.blueColorShade2,
             ],
+          ),
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: PreferredSize(
+            preferredSize: Size(double.infinity, 90),
+            child: BuildAppbarWidget(buildWidget: _buildAddButton(context)),
+          ),
+          body: Container(
+            decoration: BoxDecoration(
+              color: WhiteColors.whiteColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 20,
+                    horizontal: 12,
+                  ),
+                  child: Container(
+                    height: 45,
+                    decoration: BoxDecoration(
+                      borderRadius: MaxRadius.radiusMax3,
+                      color: GreyColors.greyColorShade1,
+                    ),
+                    child: BuildSearchbarWidget(),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 15,
+                  ),
+                  child: SizedBox(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Empleados',
+                          style: TextStyle(
+                            fontSize: MaxSizeFont.maxSizeFont1,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.9,
+                          ),
+                        ),
+                        SpacerVerticalBox.verticalMinBox,
+                        Text('Activos'),
+                      ],
+                    ),
+                  ),
+                ),
+                BuildListviewWidget(),
+              ],
+            ),
           ),
         ),
       ),

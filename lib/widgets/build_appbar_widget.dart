@@ -12,40 +12,55 @@ class BuildAppbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      useDefaultSemanticsOrder: false,
-      backgroundColor: BlueColors.blueColorShade2,
-      elevation: 0,
-      foregroundColor: WhiteColors.whiteColor,
-      flexibleSpace: Container(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15, top: 35),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(child: BuildButtonbackWidget()),
-              SizedBox(
-                child: Row(
-                  children: [
-                    Text(
-                      'estado ${EstadoEmpleado.activo.name}',
-                      style: TextStyle(
-                        color: WhiteColors.whiteColor,
-                        fontSize: MaxSizeFont.maxSizeFont3,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 0.9,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          stops: [0.1, 0.4, 0.6, 0.9],
+          colors: [
+            BlueColors.blueColorShade2,
+            BlueColors.blueColorShade1,
+            BlueColors.blueColorShade3,
+            BlueColors.blueColorShade2,
+          ],
+        ),
+      ),
+      child: AppBar(
+        useDefaultSemanticsOrder: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: WhiteColors.whiteColor,
+        flexibleSpace: Container(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 35),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(child: BuildButtonbackWidget()),
+                SizedBox(
+                  child: Row(
+                    children: [
+                      Text(
+                        'estado ${EstadoEmpleado.activo.name}',
+                        style: TextStyle(
+                          color: WhiteColors.whiteColor,
+                          fontSize: MaxSizeFont.maxSizeFont3,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.9,
+                        ),
                       ),
-                    ),
-                    IconButton(
-                      padding: EdgeInsets.all(0),
-                      onPressed: () {},
-                      icon: _buildDropdownButton(context),
-                    ),
-                  ],
+                      IconButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {},
+                        icon: _buildDropdownButton(context),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(child: buildWidget),
-            ],
+                SizedBox(child: buildWidget),
+              ],
+            ),
           ),
         ),
       ),
